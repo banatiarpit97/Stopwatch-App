@@ -54,9 +54,6 @@ $(".reset").click(function(){
     $(".start").html("Start");
     $(".addlaps").html("");
 
-
-
-
 });
 
 
@@ -64,17 +61,23 @@ $(".lap").click(function(){
     var particluarLapMilliseconds = $(".lapMilliseconds").html();
     var particluarLapSeconds = $(".lapSeconds").html();
     var particluarLapMinutes = $(".lapMintues").html();
-    appendMaterial = '<span class="laps_number">lap ' + lapNumber+'</span><span class="laps_time">'+(particluarLapMinutes).toLocaleString('en-US', {minimumIntegerDigits: 2})+':'+(particluarLapSeconds).toLocaleString('en-US', {minimumIntegerDigits: 2})+':'+(particluarLapMilliseconds).toLocaleString('en-US', {minimumIntegerDigits: 2})+'</span><hr>'
+    appendMaterial = '<span class="laps_number">lap ' + lapNumber+'</span><span class="laps_time">'+(particluarLapMinutes).toLocaleString('en-US', {minimumIntegerDigits: 2})+':'+(particluarLapSeconds).toLocaleString('en-US', {minimumIntegerDigits: 2})+':'+(particluarLapMilliseconds).toLocaleString('en-US', {minimumIntegerDigits: 3})+'</span><hr>'
     $(".addlaps").append(appendMaterial);
     lapNumber++;
+    lapSeconds = 00;
+    $(".lapSeconds").html("00");
+    lapMilliseconds = 00;
+    $(".lapMilliseconds").html("00");
+    lapMinutes = 00;
+    $(".lapMintues").html("00");
 
 });
 
 timer = function(){
     lapTime = setInterval(function(){
        lapMilliseconds +=1;
-       $(".lapMilliseconds").html((lapMilliseconds).toLocaleString('en-US', {minimumIntegerDigits: 2}));
-       if(lapMilliseconds == 60){
+       $(".lapMilliseconds").html((lapMilliseconds).toLocaleString('en-US', {minimumIntegerDigits: 3}));
+       if(lapMilliseconds == 100){
            lapSeconds +=1;
            lapMilliseconds = 00;
            $(".lapSeconds").html((lapSeconds).toLocaleString('en-US', {minimumIntegerDigits: 2}));
@@ -87,9 +90,9 @@ timer = function(){
     },10);
     mainTime = setInterval(function(){
         mainMilliseconds +=1;
-        $(".mainMilliseconds").html((mainMilliseconds).toLocaleString('en-US', {minimumIntegerDigits: 2}));
+        $(".mainMilliseconds").html((mainMilliseconds).toLocaleString('en-US', {minimumIntegerDigits: 3}));
 
-        if(mainMilliseconds == 60){
+        if(mainMilliseconds == 100){
             mainSeconds +=1;
             mainMilliseconds = 00;
             $(".mainSeconds").html((mainSeconds).toLocaleString('en-US', {minimumIntegerDigits: 2}));
