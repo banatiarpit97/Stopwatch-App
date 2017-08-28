@@ -1,0 +1,57 @@
+body{
+    background: url("../images/3.jpg") center center ;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.container-fluid{
+    text-align: center;
+    color: white;
+}
+.heading{
+    font-size: 5vw;
+}
+.LapTime{
+    float: right;
+    font-size: 4vw;
+    padding-right: 3%;
+}
+.mainTime{
+    margin-top: 7%;
+    font-size: 8vw;
+}
+.buttons{
+    text-align: center;
+}
+.start{
+    margin-left: 36%;
+}
+.start, .reset, .lap{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: #d7a04e;
+    float: left;
+    margin-right: 2%;
+    font-size: 2vw;
+    padding-top: 2.4%;
+    margin-top: 1%;
+    cursor: pointer;
+}
+.laps{
+    clear: both;
+    margin-top: 12%;
+    height: 150px;
+    overflow-y: auto;
+}
+.laps_number{
+    font-size: 2vw;
+    margin-left: -63%;
+}
+.laps_time{
+    font-size: 2vw;
+    float: right;
+    padding-right: 5%;
+}
+hr{
+    margin-top: 0;
+}
